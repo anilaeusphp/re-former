@@ -1,0 +1,20 @@
+<table>
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+      <td><%= masked_password(user.password) %></td>
+      <td><%= link_to "Edit" , edit_user_path(user) , style: "padding: 6px 14px; border-radius:6px;" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
